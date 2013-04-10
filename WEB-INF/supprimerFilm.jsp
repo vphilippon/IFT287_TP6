@@ -1,5 +1,5 @@
 <%-- 
-    Document   : ajouterActeurFilm
+    Document   : suppFilm
     Created on : 2013-04-10, 13:10:57
     Author     : larm1303
 --%>
@@ -9,40 +9,32 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>IFT287 - Ajouter acteur film</title>
+        <title>IFT287 - Supprimer film</title>
     </head>
     <body>
-        <h1>Ajouter acteur film</h1>
+        <h1>Supprimer un film</h1>
         <br/>
-        <form method="post" action="ajouterFilm">
+        <form method="post" action="suppFilm">
         <table>
             <tr>
                 <td>
-                    Titre du film* :
+                    Titre* :
                 </td>
                 <td>
-                    <input type="text" name="titre" />
+                    <input type="text" name="titre" required />
                 </td>
             </tr>
             <tr>
                 <td>
-                    Date sortie du film* :
+                    Date de sortie* :
                 </td>
                 <td>
-                    <input type="text" name="dateSortie" />
+                    <input type="text" name="dateSortie" required />
                 </td>
             </tr>
-            <tr>
-                <td>
-                    nom de l'acteur* :
-                </td>
-                <td>
-                    <input type="text" name="nom" />
-                </td>
-            </tr>   
             <tr>
                 <td colspan="2">
-                    <input type="submit" value="Ajouter l'acteur au film" />
+                    <input type="submit" value="Supprimer le film" />
                 </td>
             </tr>
         </table>

@@ -21,7 +21,7 @@
                     Titre de l'&eacute;pisode* :
                 </td>
                 <td>
-                    <input type="text" name="titreEpisode" />
+                    <input type="text" name="titreEpisode" required />
                 </td>
             </tr>
             <tr>
@@ -29,7 +29,7 @@
                     Titre de la s&eacute;rie* :
                 </td>
                 <td>
-                    <input type="text" name="titreSerie" />
+                    <input type="text" name="titreSerie" required />
                 </td>
             </tr>
             <tr>
@@ -37,7 +37,7 @@
                     Date serie* :
                 </td>
                 <td>
-                    <input type="text" name="dateSerie" />
+                    <input type="text" name="dateSerie" required />
                 </td>
             </tr>
             <tr>
@@ -45,7 +45,7 @@
                     Num&eacute;ro de la saison* :
                 </td>
                 <td>
-                    <input type="text" name="noSaison" />
+                    <input type="text" name="noSaison" required />
                 </td>
             </tr>
             <tr>
@@ -53,7 +53,7 @@
                     Num&eacute;ro de l'&eacute;pisode* :
                 </td>
                 <td>
-                    <input type="text" name="noEpisode" />
+                    <input type="text" name="noEpisode" required />
                 </td>
             </tr>
             <tr>
@@ -69,7 +69,7 @@
                     Date de l'&eacute;pisode* :
                 </td>
                 <td>
-                    <input type="text" name="dateEpisode" />
+                    <input type="text" name="dateEpisode" required />
                 </td>
             </tr>
             <tr>

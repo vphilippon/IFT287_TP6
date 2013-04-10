@@ -1,5 +1,5 @@
 <%-- 
-    Document   : ajouterDescFilm
+    Document   : ajouterActeurFilm
     Created on : 2013-04-10, 13:10:57
     Author     : larm1303
 --%>
@@ -9,16 +9,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>IFT287 - Ajouter description film</title>
+        <title>IFT287 - Ajouter acteur film</title>
     </head>
     <body>
-        <h1>Ajouter description film</h1>
+        <h1>Ajouter acteur film</h1>
         <br/>
-        <form method="post" action="ajouterDescFilm">
+        <form method="post" action="ajouterActeurFilm">
         <table>
             <tr>
                 <td>
-                    Titre* :
+                    Titre du film* :
                 </td>
                 <td>
                     <input type="text" name="titre" required />
@@ -26,7 +26,7 @@
             </tr>
             <tr>
                 <td>
-                    Date sortie* :
+                    Date sortie du film* :
                 </td>
                 <td>
                     <input type="text" name="dateSortie" required />
@@ -34,23 +34,15 @@
             </tr>
             <tr>
                 <td>
-                    Description :
+                    nom de l'acteur* :
                 </td>
                 <td>
-                    <textarea name="description"></textarea>
+                    <input type="text" name="nom" required />
                 </td>
-            </tr>            
-            <tr>
-                <td>
-                    durée :
-                </td>
-                <td>
-                    <input type="number" name="duree" />
-                </td>
-            </tr>
+            </tr>   
             <tr>
                 <td colspan="2">
-                    <input type="submit" value="Ajouter la description au film" />
+                    <input type="submit" value="Ajouter l'acteur au film" />
                 </td>
             </tr>
         </table>

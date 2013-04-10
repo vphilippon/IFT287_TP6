@@ -21,7 +21,7 @@
                     Titre* :
                 </td>
                 <td>
-                    <input type="text" name="titre" />
+                    <input type="text" name="titre" required />
                 </td>
             </tr>
             <tr>
@@ -29,7 +29,7 @@
                     Date sortie* :
                 </td>
                 <td>
-                    <input type="text" name="dateSortie" />
+                    <input type="text" name="dateSortie" required />
                 </td>
             </tr>
             <tr>
@@ -53,7 +53,7 @@
                     R&eacute;alisateur* : 
                 </td>
                 <td>
-                    <input type="text" name="realisateur" />
+                    <input type="text" name="realisateur" required />
                 </td>
             </tr>
             <tr>
