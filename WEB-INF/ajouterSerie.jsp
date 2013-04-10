@@ -43,14 +43,6 @@
                 </tr>
                 <tr>
                     <td>
-                        Description :
-                    </td>
-                    <td>
-                        <input type="textarea" name="description" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
                         Nombre de saison* :
                     </td>
                     <td>
