@@ -2,7 +2,6 @@ package tp6;
 
 import java.sql.Date;
 import java.sql.SQLException;
-import java.util.Iterator;
 import java.util.List;
 
 public class GestionSerie {
@@ -27,8 +26,8 @@ public class GestionSerie {
         this.roleEpisode = roleEpisode;
     }
 
-    public void ajoutSerie(String titre, Date dateSortie, String realisateur)
-            throws Exception {
+    public void ajoutSerie(String titre, Date dateSortie, String realisateur,
+            String description, int nbSaison) throws Exception {
         try {
             // Vérifie si le film existe déja 
             if (serie.existe(titre, dateSortie)) {
@@ -50,7 +49,23 @@ public class GestionSerie {
                         + " et ne peut pas participer a un film cree le: " + dateSortie);
             }
             // Ajout de la serie la table des series
-            serie.ajouter(titre, dateSortie, realisateur);
+            serie.ajouter(titre, dateSortie, realisateur, description, nbSaison);
+            cx.commit();
+        } catch (Exception e) {
+            cx.rollback();
+            throw e;
+        }
+    }
+
+    public void ajoutDescSerie(String titre, Date anneeSortie, String description)
+            throws Exception {
+        try {
+            //si la serie n'existe pas
+            if (!serie.existe(titre, anneeSortie)) {
+                throw new Tp6Exception("Impossible d'ajouter la série, la série " + titre
+                        + " paru le " + anneeSortie + " n'existe pas.");
+            }
+            serie.ajouterDescription(titre, anneeSortie, description);
             cx.commit();
         } catch (Exception e) {
             cx.rollback();

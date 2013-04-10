@@ -24,33 +24,35 @@ public class AjouterSerie extends HttpServlet {
         } else {
             try {
                 String titre = request.getParameter("titre");
-                String anneSortie = request.getParameter("anneSortie");
+                String anneeSortie = request.getParameter("anneeSortie");
                 String realisateur = request.getParameter("realisateur");
                 String description = request.getParameter("description");
                 String nbSaison = request.getParameter("nbSaison");
                 // conversion du parametre dureeFilm en entier
-                int saison = -1; // inialisation requise par compilateur Java
+                int saison;
                 try {
-                    if (nbSaison.equals("")){
-                        nbSaison="1";
+                    if (nbSaison.equals("")) {
+                        nbSaison = "1";
                     }
                     saison = Integer.parseInt(nbSaison);
                 } catch (NumberFormatException e) {
-                    throw new Tp6Exception("Format de saison " + nbSaison + " incorrect. Entier attendu");
+                    throw new Tp6Exception("Format de saison " + nbSaison
+                            + " incorrect. Entier attendu");
                 }
                 // conversion du parametre dateSortie en SQLDate
-                Date date; // inialisation requise par compilateur Java
+                Date date;
                 try {
-                    date = new Date(FormatDate.convertirDate(anneSortie).getTime());
+                    date = new Date(FormatDate.convertirDate(anneeSortie).getTime());
                 } catch (ParseException e) {
-                    throw new Tp6Exception("Format de la date " + anneSortie
+                    throw new Tp6Exception("Format de la date " + anneeSortie
                             + " incorrect. AAAA-MM-JJ attendue.");
                 }
                 // exécuter la transaction
                 GestionTp6 tp6Update = (GestionTp6) request.getSession().getAttribute(
                         "tp6Update");
                 synchronized (tp6Update) {
-                    tp6Update.gestionSerie.ajoutSerie(titre, date, realisateur, description, saison);
+                    tp6Update.gestionSerie.ajoutSerie(titre, date, realisateur,
+                            description, saison);
                 }
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/menu.jsp");
                 dispatcher.forward(request, response);
@@ -71,8 +73,6 @@ public class AjouterSerie extends HttpServlet {
     // Appel doPost
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // response.sendError(response.SC_INTERNAL_SERVER_ERROR, "Accès
-        // invalide");
         doPost(request, response);
     }
 } // class

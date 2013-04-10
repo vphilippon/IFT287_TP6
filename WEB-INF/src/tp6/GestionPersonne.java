@@ -2,7 +2,6 @@ package tp6;
 
 import java.sql.Date;
 import java.sql.SQLException;
-import java.util.Iterator;
 import java.util.List;
 
 public class GestionPersonne {
