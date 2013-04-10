@@ -11,10 +11,7 @@ import tp6.FormatDate;
 import tp6.GestionTp6;
 import tp6.Tp6Exception;
 
-/**
- *
- * @author guillaume
- */
+@SuppressWarnings("serial")
 public class AjouterDescFilm extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

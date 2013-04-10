@@ -1,5 +1,6 @@
 package tp6Servlet;
 
+import java.text.ParseException;
 import java.util.List;
 import java.util.LinkedList;
 import java.sql.*;
@@ -39,7 +40,7 @@ public class AjouterFilm extends HttpServlet {
                 Date date; // inialisation requise par compilateur Java
                 try {
                     date = new Date(FormatDate.convertirDate(dateSortie).getTime());
-                } catch (NumberFormatException e) {
+                } catch (ParseException e) {
                     throw new Tp6Exception("Format de la date " + dateSortie
                             + " incorrect. AAAA-MM-JJ attendue.");
                 }
