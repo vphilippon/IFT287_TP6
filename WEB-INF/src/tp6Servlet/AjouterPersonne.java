@@ -13,7 +13,7 @@ import tp6.GestionTp6;
 import tp6.Tp6Exception;
 
 @SuppressWarnings("serial")
-public class AjouterFilm extends HttpServlet {
+public class AjouterPersonne extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -38,12 +38,9 @@ public class AjouterFilm extends HttpServlet {
                 Date date; // inialisation requise par compilateur Java
                 try {
                     date = new Date(FormatDate.convertirDate(dateNaissance).getTime());
-                } catch (ParseException e){
+                } catch (ParseException e) {
                     throw new Tp6Exception("Format de la date " + dateNaissance
-                            + " incorrect.");
-                } catch (NumberFormatException e) {
-                    throw new Tp6Exception("Format de la date " + dateNaissance
-                            + " incorrect.");
+                            + " incorrect. AAAA-MM-JJ attendue.");
                 }
                 // exécuter la transaction
                 GestionTp6 tp6Update = (GestionTp6) request.getSession().getAttribute(
