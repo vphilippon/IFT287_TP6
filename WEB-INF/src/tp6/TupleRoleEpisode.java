@@ -3,16 +3,18 @@ package tp6;
 import java.sql.Date;
 
 public class TupleRoleEpisode {
+
     private String nomActeur;
     private String roleActeur;
     private String titreSerie;
     private String titreEpisode;
-    private int noSaison;
-    private int noEpisode;
-    private Date anneeSortieSerie;
-    
-    public TupleRoleEpisode(String nomActeur, String roleActeur, String titreSerie, 
-            String titreEpisode, int noSaison, int noEpisode, Date anneeSortieSerie) {
+    private int    noSaison;
+    private int    noEpisode;
+    private Date   anneeSortieSerie;
+
+    public TupleRoleEpisode(String nomActeur, String roleActeur, String titreSerie,
+                            String titreEpisode, int noSaison, int noEpisode,
+                            Date anneeSortieSerie) {
         this.nomActeur = nomActeur;
         this.roleActeur = roleActeur;
         this.titreSerie = titreSerie;

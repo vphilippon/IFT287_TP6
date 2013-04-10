@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class Episode {
 
     // Pas de TupleEpisode nécéssaire
-    private Connexion cx;
+    private Connexion         cx;
     private PreparedStatement stmtEpisodeExiste;
     private PreparedStatement stmtAjouterEpisode;
 
@@ -31,8 +31,8 @@ public class Episode {
         return cx;
     }
 
-    public boolean existe(String serieTitre, Date serieDate, int noSaison,
-            int noEpisode) throws SQLException {
+    public boolean existe(String serieTitre, Date serieDate, int noSaison, int noEpisode)
+            throws SQLException {
         boolean episodeExiste;
         stmtEpisodeExiste.setString(1, serieTitre);
         stmtEpisodeExiste.setDate(2, serieDate);
@@ -44,9 +44,8 @@ public class Episode {
         return episodeExiste;
     }
 
-    void ajouter(String titre, String titreSerie, Date anneeSortieSerie,
-            int noSaison, int noEpisode, String description, Date dateDiffusion)
-            throws SQLException {
+    void ajouter(String titre, String titreSerie, Date anneeSortieSerie, int noSaison,
+            int noEpisode, String description, Date dateDiffusion) throws SQLException {
         stmtAjouterEpisode.setString(1, titre);
         stmtAjouterEpisode.setString(2, titreSerie);
         stmtAjouterEpisode.setDate(3, anneeSortieSerie);

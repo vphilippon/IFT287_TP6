@@ -14,7 +14,7 @@ public class Personne {
     private PreparedStatement stmDeletePersonne;
     private PreparedStatement stmtGetRealisateur;
     private PreparedStatement stmtGetActeurDeSerie;
-    private Connexion cx;
+    private Connexion         cx;
 
     public Personne(Connexion cx) throws SQLException {
         this.cx = cx;
@@ -37,7 +37,7 @@ public class Personne {
     public Connexion getConnexion() {
         return cx;
     }
-    
+
     public boolean existe(String nom) throws SQLException {
         boolean personneExiste;
         stmGetPersonne.setString(1, nom);
@@ -46,48 +46,53 @@ public class Personne {
         rs.close();
         return personneExiste;
     }
-    
+
     public TuplePersonne getPersonne(String nom) throws SQLException {
         stmGetPersonne.setString(1, nom);
         ResultSet rs = stmGetPersonne.executeQuery();
         rs.next();
 
-        TuplePersonne tuplePer = new TuplePersonne(rs.getString("nom"), rs.getDate("dateNaissance"), 
-                                                   rs.getString("lieuNaissance"), rs.getInt("sexe"));
+        TuplePersonne tuplePer = new TuplePersonne(rs.getString("nom"),
+                rs.getDate("dateNaissance"), rs.getString("lieuNaissance"),
+                rs.getInt("sexe"));
         rs.close();
         return tuplePer;
     }
-    
-    public void ajouter(String nom, Date dateNaissance, String lieuNaissance, int sexe) throws SQLException {
+
+    public void ajouter(String nom, Date dateNaissance, String lieuNaissance, int sexe)
+            throws SQLException {
         stmInsertPersonne.setString(1, nom);
         stmInsertPersonne.setDate(2, dateNaissance);
         stmInsertPersonne.setString(3, lieuNaissance);
         stmInsertPersonne.setInt(4, sexe);
         stmInsertPersonne.executeUpdate();
     }
-    
+
     public int enlever(String nom) throws SQLException {
         stmDeletePersonne.setString(1, nom);
         return stmDeletePersonne.executeUpdate();
     }
-    
+
     public List<TuplePersonne> realisateurDeFilms() throws SQLException {
         List<TuplePersonne> listeRealisateur = new ArrayList<TuplePersonne>();
         ResultSet rs = stmtGetRealisateur.executeQuery();
-        while(rs.next()){
-            listeRealisateur.add(new TuplePersonne(rs.getString(1),rs.getDate(2),rs.getString(3),rs.getInt(4)));
+        while (rs.next()) {
+            listeRealisateur.add(new TuplePersonne(rs.getString(1), rs.getDate(2),
+                    rs.getString(3), rs.getInt(4)));
         }
         rs.close();
         return listeRealisateur;
     }
 
-    public List<TuplePersonne> acteursDeSerie(String serieTitre, Date serieDate) throws SQLException {
+    public List<TuplePersonne> acteursDeSerie(String serieTitre, Date serieDate)
+            throws SQLException {
         List<TuplePersonne> listeActeur = new ArrayList<TuplePersonne>();
         stmtGetActeurDeSerie.setString(1, serieTitre);
         stmtGetActeurDeSerie.setDate(2, serieDate);
         ResultSet rs = stmtGetActeurDeSerie.executeQuery();
-        while(rs.next()){
-            listeActeur.add(new TuplePersonne(rs.getString(1),rs.getDate(2),rs.getString(3),rs.getInt(4)));
+        while (rs.next()) {
+            listeActeur.add(new TuplePersonne(rs.getString(1), rs.getDate(2),
+                    rs.getString(3), rs.getInt(4)));
         }
         rs.close();
         return listeActeur;

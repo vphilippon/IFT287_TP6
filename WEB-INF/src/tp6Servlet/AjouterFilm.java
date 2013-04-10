@@ -28,7 +28,7 @@ public class AjouterFilm extends HttpServlet {
                 String realisateur = request.getParameter("realisateur");
 
                 // conversion du parametre dateSortie en SQLDate
-                Date date; // inialisation requise par compilateur Java
+                Date date;
                 try {
                     date = new Date(FormatDate.convertirDate(dateSortie).getTime());
                 } catch (ParseException e) {
@@ -60,8 +60,6 @@ public class AjouterFilm extends HttpServlet {
     // Appel doPost
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // response.sendError(response.SC_INTERNAL_SERVER_ERROR, "Accès
-        // invalide");
         doPost(request, response);
     }
 } // class

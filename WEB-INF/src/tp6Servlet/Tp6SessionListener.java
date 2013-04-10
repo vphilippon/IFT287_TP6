@@ -14,7 +14,7 @@ import java.sql.*;
 public class Tp6SessionListener implements HttpSessionListener {
 
     public void sessionCreated(HttpSessionEvent se) {
-        System.out.println("Session TP6 cree : " + se.getSession().getId());
+        System.out.println("Session Tp6 cree : " + se.getSession().getId());
     }
 
     public void sessionDestroyed(HttpSessionEvent se) {

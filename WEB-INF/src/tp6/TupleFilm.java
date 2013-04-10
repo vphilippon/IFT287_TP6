@@ -2,16 +2,16 @@ package tp6;
 
 import java.sql.Date;
 
-public class TupleFilm 
-{
-    
+public class TupleFilm {
+
     private String titre;
-    private Date dateSortie;
+    private Date   dateSortie;
     private String description;
-    private int duree;
+    private int    duree;
     private String realisateur;
 
-    public TupleFilm(String titre, Date dateSortie, String description, int duree, String realisateur) {
+    public TupleFilm(String titre, Date dateSortie, String description, int duree,
+                     String realisateur) {
         this.titre = titre;
         this.dateSortie = dateSortie;
         this.description = description;

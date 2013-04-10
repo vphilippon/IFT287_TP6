@@ -32,7 +32,8 @@ public class AjouterPersonne extends HttpServlet {
                 try {
                     s = Integer.parseInt(sexe);
                 } catch (NumberFormatException e) {
-                    throw new Tp6Exception("Format du sexe " + sexe + " incorrect. (0 = gars, 1 = fille)");
+                    throw new Tp6Exception("Format du sexe " + sexe
+                            + " incorrect. (0 = gars, 1 = fille)");
                 }
                 // conversion du parametre dateSortie en SQLDate
                 Date date; // inialisation requise par compilateur Java
@@ -46,7 +47,7 @@ public class AjouterPersonne extends HttpServlet {
                 GestionTp6 tp6Update = (GestionTp6) request.getSession().getAttribute(
                         "tp6Update");
                 synchronized (tp6Update) {
-                    tp6Update.gestionPersonne.ajoutPersonne(nom,date,lieuNaissance,s);
+                    tp6Update.gestionPersonne.ajoutPersonne(nom, date, lieuNaissance, s);
                 }
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/menu.jsp");
                 dispatcher.forward(request, response);
@@ -67,8 +68,6 @@ public class AjouterPersonne extends HttpServlet {
     // Appel doPost
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // response.sendError(response.SC_INTERNAL_SERVER_ERROR, "Accès
-        // invalide");
         doPost(request, response);
     }
 } // class

@@ -13,8 +13,10 @@ public class Tp6ContextListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         System.out.println("Contexte demarre:"
                 + sce.getServletContext().getServletContextName());
-        System.out.println("Voici les parametres du contexte tels que definis dans web.xml");
         Enumeration<String> initParams = sce.getServletContext().getInitParameterNames();
+        if (initParams.hasMoreElements()) {
+            System.out.println("Voici les parametres du contexte tels que definis dans web.xml");
+        }
         while (initParams.hasMoreElements()) {
             String name = (String) initParams.nextElement();
             System.out.println(name + ":"
