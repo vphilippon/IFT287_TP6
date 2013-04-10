@@ -33,6 +33,22 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>
+                        Numéro de saison* :
+                    </td>
+                    <td>
+                        <input type="text" name="noSaison" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Numéro d'épisode* :
+                    </td>
+                    <td>
+                        <input type="text" name="noEpisode" required />
+                    </td>
+                </tr>
+                <tr>
                     <td colspan="2">
                         <input type="submit" value="Afficher la liste d'acteur" />
                     </td>
