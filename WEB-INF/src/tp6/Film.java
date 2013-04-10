@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-class Film {
+public class Film {
 
     private Connexion cx;
     private PreparedStatement stmtFilmExiste;

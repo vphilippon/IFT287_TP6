@@ -11,10 +11,6 @@ import tp6.*;
 import tp6.GestionTp6.*;
 import tp6.Tp6Exception;
 
-/**
- *
- * @author guillaume
- */
 public class AjouterFilm {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

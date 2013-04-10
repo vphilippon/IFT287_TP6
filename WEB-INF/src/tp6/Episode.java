@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-class Episode {
+public class Episode {
 
     // Pas de TupleEpisode nécéssaire
     private Connexion cx;

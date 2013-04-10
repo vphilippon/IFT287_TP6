@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.List;
 
-class GestionSerie {
+public class GestionSerie {
     
     private Serie serie;
     private Episode episode;
