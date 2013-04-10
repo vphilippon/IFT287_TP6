@@ -14,7 +14,7 @@
     <body>
         <h1>Ajouter acteur episode</h1>
         <br/>
-        <form method="post" action="ajouterActeurEpisode">
+        <form method="post" action="AjouterActeurEpisode">
         <table>
             <tr>
                 <td>

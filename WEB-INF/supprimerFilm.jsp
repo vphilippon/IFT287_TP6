@@ -14,7 +14,7 @@
     <body>
         <h1>Supprimer un film</h1>
         <br/>
-        <form method="post" action="supprimerFilm">
+        <form method="post" action="SupprimerFilm">
         <table>
             <tr>
                 <td>

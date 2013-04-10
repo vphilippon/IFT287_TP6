@@ -14,7 +14,7 @@
     <body>
         <h1>Ajouter Episode</h1>
         <br/>
-        <form method="post" action="ajouterEpisode">
+        <form method="post" action="AjouterEpisode">
         <table>
             <tr>
                 <td>

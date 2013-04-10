@@ -14,7 +14,7 @@
     <body>
         <h1>Ajouter la description au film</h1>
         <br/>
-        <form method="post" action="ajouterDescFilm">
+        <form method="post" action="AjouterDescFilm">
         <table>
             <tr>
                 <td>

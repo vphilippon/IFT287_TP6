@@ -14,7 +14,7 @@
     <body>
         <h1>Lister film acteur/h1>
         <br/>
-        <form method="post" action="listerFilmActeur">
+        <form method="post" action="ListerFilmActeur">
             <table>
                 <tr>
                     <td>
