@@ -28,6 +28,61 @@ public class Menu extends HttpServlet {
                 // afficher le menu en appelant la page menu.jsp
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/ajouterFilm.jsp");
             }
+            else if(demande.equals("ajouterDescFilm")){
+                    System.out.println("Demande = ajouterDescFilm");
+                    // afficher le menu en appelant la page menu.jsp
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/ajouterDescFilm.jsp");
+                }
+                else if(demande.equals("ajouterPersonne")){
+                        System.out.println("Demande = ajouterPersonne");
+                        // afficher le menu en appelant la page menu.jsp
+                        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/ajouterPersonne.jsp");
+                    }
+                    else if(demande.equals("ajouterActeurFilm")){
+                            System.out.println("Demande = ajouterActeurFilm");
+                            // afficher le menu en appelant la page menu.jsp
+                            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/ajouterActeurFilm.jsp");
+                        }
+                        else if(demande.equals("ajouterSerie")){
+                                System.out.println("Demande = ajouterSerie");
+                                // afficher le menu en appelant la page menu.jsp
+                                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/ajouterSerie.jsp");
+                            }
+                            else if(demande.equals("ajouterEpisode")){
+                                    System.out.println("Demande = ajouterEpisode");
+                                    // afficher le menu en appelant la page menu.jsp
+                                    RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/ajouterEpisode.jsp");
+                                }
+                                else if(demande.equals("ajouterActeurSerie")){
+                                        System.out.println("Demande = ajouterActeurSerie");
+                                        // afficher le menu en appelant la page menu.jsp
+                                        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/ajouterActeurSerie.jsp");
+                                    }
+                                    else if(demande.equals("supprimerFilm")){
+                                            System.out.println("Demande = supprimerFilm");
+                                            // afficher le menu en appelant la page menu.jsp
+                                            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/supprimerFilm.jsp");
+                                        }
+                                        else if(demande.equals("supprimerPersonne")){
+                                                System.out.println("Demande = supprimerPersonne");
+                                                // afficher le menu en appelant la page menu.jsp
+                                                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/supprimerPersonne.jsp");
+                                            }
+                                            else if(demande.equals("listerActeurFilm")){
+                                                    System.out.println("Demande = listerActeurFilm");
+                                                    // afficher le menu en appelant la page menu.jsp
+                                                    RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/listerActeurFilm.jsp");
+                                                }
+                                                else if(demande.equals("listerActeurSerie")){
+                                                        System.out.println("Demande = listerActeurSerie");
+                                                        // afficher le menu en appelant la page menu.jsp
+                                                        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/listerActeurSerie.jsp");
+                                                    }
+                                                    else if(demande.equals("listerSerieActeur")){
+                                                            System.out.println("Demande = listerSerieActeur");
+                                                            // afficher le menu en appelant la page menu.jsp
+                                                            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/listerSerieActeur.jsp");
+                                                        }
             
         } catch (Exception e) {
             e.printStackTrace();
