@@ -45,7 +45,7 @@
                     durée :
                 </td>
                 <td>
-                    <input type="number" name="duree" />
+                    <input type="text" name="duree" />
                 </td>
             </tr>
             <tr>
