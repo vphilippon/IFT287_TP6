@@ -41,12 +41,20 @@
                         <input type="text" name="realisateur" required />
                     </td>
                 </tr>
-                <tr>
+                 <tr>
                     <td>
-                        Nombre de saison* :
+                        Description :
                     </td>
                     <td>
-                        <input type="text" name="nbSaison" required />
+                        <input type="text" name="description" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Nombre de saison :
+                    </td>
+                    <td>
+                        <input type="text" name="nbSaison" />
                     </td>
                 </tr>
                 <tr>
