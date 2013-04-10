@@ -1,5 +1,5 @@
 <%-- 
-    Document   : suppFilm
+    Document   : supprimerFilm
     Created on : 2013-04-10, 13:10:57
     Author     : larm1303
 --%>
@@ -14,7 +14,7 @@
     <body>
         <h1>Supprimer un film</h1>
         <br/>
-        <form method="post" action="suppFilm">
+        <form method="post" action="supprimerFilm">
         <table>
             <tr>
                 <td>
