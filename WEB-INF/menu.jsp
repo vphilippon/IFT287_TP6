@@ -14,17 +14,17 @@
 		<h1>Menu</h1>
 		<form ACTION="menu" METHOD="POST">
 			<input id="demande" TYPE="hidden" NAME="demande" VALUE="menu" /> 
-                        <input TYPE="SUBMIT" VALUE="Ajouter un film" onclick="document.getElementById('demande').value = 'ajouterFilm';" />
-                        <input TYPE="SUBMIT" VALUE="Ajouter une description a un film" onclick="document.getElementById('demande').value = 'ajouterDescFilm';" />
-                        <input TYPE="SUBMIT" VALUE="Ajouter une personne" onclick="document.getElementById('demande').value = 'ajouterPersonne';" />
-                        <input TYPE="SUBMIT" VALUE="Ajouter un acteur dans un film" onclick="document.getElementById('demande').value = 'ajouterActeurFilm';" />
-                        <input TYPE="SUBMIT" VALUE="Ajouter une serie" onclick="document.getElementById('demande').value = 'ajouterSerie';" />
-                        <input TYPE="SUBMIT" VALUE="Ajouter un un episode dans une serie" onclick="document.getElementById('demande').value = 'ajouterEpisode';" />
-                        <input TYPE="SUBMIT" VALUE="Ajouter un acteur dans un episode d'une serie" onclick="document.getElementById('demande').value = 'ajouterActeurSerie';"> /
-                        <input TYPE="SUBMIT" VALUE="Supprimer un film" onclick="document.getElementById('demande').value = 'supprimerFilm';" />
-                        <input TYPE="SUBMIT" VALUE="Supprimer une personne" onclick="document.getElementById('demande').value = 'supprimerPersonne';" />
-                        <input TYPE="SUBMIT" VALUE="Lister les acteurs d'un film" onclick="document.getElementById('demande').value = 'listerActeurFilm';" /> 
-                        <input TYPE="SUBMIT" VALUE="Lister les acteurs d'une serie" onclick="document.getElementById('demande').value = 'listerActeurSerie';" />
+                        <input TYPE="SUBMIT" VALUE="Ajouter un film" onclick="document.getElementById('demande').value = 'ajouterFilm';" /><br/>
+                        <input TYPE="SUBMIT" VALUE="Ajouter une description a un film" onclick="document.getElementById('demande').value = 'ajouterDescFilm';" /><br/>
+                        <input TYPE="SUBMIT" VALUE="Ajouter une personne" onclick="document.getElementById('demande').value = 'ajouterPersonne';" /><br/>
+                        <input TYPE="SUBMIT" VALUE="Ajouter un acteur dans un film" onclick="document.getElementById('demande').value = 'ajouterActeurFilm';" /><br/>
+                        <input TYPE="SUBMIT" VALUE="Ajouter une serie" onclick="document.getElementById('demande').value = 'ajouterSerie';" /><br/>
+                        <input TYPE="SUBMIT" VALUE="Ajouter un un episode dans une serie" onclick="document.getElementById('demande').value = 'ajouterEpisode';" /><br/>
+                        <input TYPE="SUBMIT" VALUE="Ajouter un acteur dans un episode d'une serie" onclick="document.getElementById('demande').value = 'ajouterActeurSerie';" /> <br/>
+                        <input TYPE="SUBMIT" VALUE="Supprimer un film" onclick="document.getElementById('demande').value = 'supprimerFilm';" /><br/>
+                        <input TYPE="SUBMIT" VALUE="Supprimer une personne" onclick="document.getElementById('demande').value = 'supprimerPersonne';" /><br/>
+                        <input TYPE="SUBMIT" VALUE="Lister les acteurs d'un film" onclick="document.getElementById('demande').value = 'listerActeurFilm';" /> <br/>
+                        <input TYPE="SUBMIT" VALUE="Lister les acteurs d'une serie" onclick="document.getElementById('demande').value = 'listerActeurSerie';" /><br/>
                         <input TYPE="SUBMIT" VALUE="Lister les series contenant un acteur" onclick="document.getElementById('demande').value = 'listerSerieActeur';" />
 		</form>
 	</center>
