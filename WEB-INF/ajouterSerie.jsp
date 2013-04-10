@@ -46,7 +46,7 @@
                         Nombre de saison* :
                     </td>
                     <td>
-                        <input type="number" name="nbSaison" required />
+                        <input type="text" name="nbSaison" required />
                     </td>
                 </tr>
                 <tr>

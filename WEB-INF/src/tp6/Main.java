@@ -104,7 +104,9 @@ public class Main {
                     gestionTp6.gestionSerie.ajoutSerie(
                             readString(tokenizer) /* titre */,
                             readDate(tokenizer) /* annee */,
-                            readString(tokenizer) /* nom realisateur */);
+                            readString(tokenizer) /* nom realisateur */,
+                            readString(tokenizer),
+                            readInt(tokenizer));
                 
                 }else if ("ajoutEpisode".startsWith(command)){
                     gestionTp6.gestionSerie.ajoutEpisode(

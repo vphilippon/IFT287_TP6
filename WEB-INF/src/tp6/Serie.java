@@ -14,6 +14,7 @@ public class Serie {
     private PreparedStatement stmtAjouterSerie;
     private PreparedStatement stmtSerieDeRealisateur;
     private PreparedStatement stmtSerieAvecActeur;
+    private PreparedStatement stmtAjoutDescSerie;
     
     public Serie(Connexion cx) throws SQLException {
         this.cx = cx;
@@ -28,6 +29,8 @@ public class Serie {
                         + " VALUES (?, ?, ?, ?, ?)");
         stmtSerieDeRealisateur = cx.getConnection().prepareStatement(
                 "SELECT * FROM Serie WHERE realisateur = ?");
+        stmtAjoutDescSerie = cx.getConnection().prepareStatement(
+                "UPDATE Serie SET description=? WHERE titre = ? AND dateSortie = ?");
         stmtSerieAvecActeur = cx.getConnection().prepareStatement(
                 "SELECT * FROM Serie WHERE titre IN" 
                         + " (SELECT titreSerie FROM RoleEpisode WHERE nomActeur = ?)");
@@ -58,16 +61,6 @@ public class Serie {
         stmtAjouterSerie.setInt(5, nbSaison);
         stmtAjouterSerie.executeUpdate();            
     }
-    
-    // Surcharge de la methode pour respecter les formats d'entree du fichier
-    public void ajouter(String titre, Date dateSortie, String realisateur) throws SQLException {
-        stmtAjouterSerie.setString(1, titre);
-        stmtAjouterSerie.setDate(2, dateSortie);
-        stmtAjouterSerie.setString(3, realisateur);
-        stmtAjouterSerie.setString(4, ""); //valeur par defaut
-        stmtAjouterSerie.setInt(5, 1); //valeur par defaut
-        stmtAjouterSerie.executeUpdate();
-    }
 
     public List<TupleSerie> serieDeRealisateur(String nom) throws SQLException {
         List<TupleSerie> listeSerie = new ArrayList<TupleSerie>();
@@ -78,6 +71,13 @@ public class Serie {
         }
         rs.close();
         return listeSerie;
+    }
+    
+    public void ajouterDescription(String titre, Date anneeSortie, String description) throws SQLException {
+        stmtAjouterSerie.setString(1,description);
+        stmtAjouterSerie.setString(2,titre);
+        stmtAjouterSerie.setDate(3,anneeSortie);
+        stmtAjouterSerie.executeUpdate();
     }
     
     public List<TupleSerie> serieAvecActeur(String nom) throws SQLException {

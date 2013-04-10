@@ -25,7 +25,7 @@ public class GestionSerie {
         this.roleEpisode = roleEpisode;
     }
 
-    public void ajoutSerie(String titre, Date dateSortie, String realisateur) throws Exception {
+    public void ajoutSerie(String titre, Date dateSortie, String realisateur, String description, int nbSaison) throws Exception {
         try {
             // Vérifie si le film existe déja 
             if (serie.existe(titre, dateSortie)) {
@@ -42,7 +42,7 @@ public class GestionSerie {
                         " et ne peut pas participer à un film créé le: " + dateSortie);
             }  
             // Ajout de la serie la table des series
-            serie.ajouter(titre, dateSortie, realisateur);
+            serie.ajouter(titre, dateSortie, realisateur, description, nbSaison);
             cx.commit();
         } catch (Exception e) {
             cx.rollback();
