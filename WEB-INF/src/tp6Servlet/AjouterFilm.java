@@ -41,7 +41,7 @@ public class AjouterFilm extends HttpServlet {
                     date = new Date(FormatDate.convertirDate(dateSortie).getTime());
                 } catch (NumberFormatException e) {
                     throw new Tp6Exception("Format de la date " + dateSortie
-                            + " incorrect.");
+                            + " incorrect. AAAA-MM-JJ attendue.");
                 }
                 // exécuter la transaction
                 GestionTp6 tp6Update = (GestionTp6) request.getSession().getAttribute(

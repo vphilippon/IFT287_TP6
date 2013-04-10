@@ -23,7 +23,6 @@ public class Menu extends HttpServlet {
             
             String demande = request.getParameter("demande");
             if(demande.equals("ajouterFilm")){
-                System.out.println("BLAH");
                 System.out.println("Demande = ajouterFilm");
                 // afficher le menu en appelant la page menu.jsp
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/ajouterFilm.jsp");
