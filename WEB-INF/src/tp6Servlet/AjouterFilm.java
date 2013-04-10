@@ -55,14 +55,14 @@ public class AjouterFilm extends HttpServlet{
                                       tp6Update.gestionFilm.ajoutDescFilm(titre, date, description, dureeFilm);
                               }
                                       RequestDispatcher dispatcher = request
-                                                      .getRequestDispatcher("/WEB-INF/listePretMembre.jsp");
+                                                      .getRequestDispatcher("/WEB-INF/menu.jsp");
                                       dispatcher.forward(request, response);
                       } catch (Tp6Exception e) {
                               List listeMessageErreur = new LinkedList();
                               listeMessageErreur.add(e.toString());
                               request.setAttribute("listeMessageErreur", listeMessageErreur);
                               RequestDispatcher dispatcher = request
-                                              .getRequestDispatcher("/WEB-INF/emprunt.jsp");
+                                              .getRequestDispatcher("/WEB-INF/menu.jsp");
                               dispatcher.forward(request, response);
                       } catch (Exception e) {
                               e.printStackTrace();
@@ -71,25 +71,6 @@ public class AjouterFilm extends HttpServlet{
                                                               .toString());
                       }
                 }
-               /*
-		String titre = request.getParameter("titre");
-		String dateSortie = request.getParameter("dateSortie");
-		String description = request.getParameter("description");
-		String duree = request.getParameter("duree");
-		String realisateur = request.getParameter("realisateur");
-                Date dt;
-                try {
-                dt = new Date(FormatDate.convertirDate(dateSortie).getTime());
-                tp6Update.gestionFilm.ajoutFilm(titre,dt,realisateur);//(titre,dateSortie,description,duree,realisateur);
-            } catch (ParseException e) {
-                System.out.println("Date en format YYYY-MM-DD attendue à la place  de \"" +
-                  dateSortie + "\"");
-            }
-                catch (Exception e){
-                    
-                }
-                
-                */
 	}
 
 	// Dans les formulaire, on utilise la méthode POST
