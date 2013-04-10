@@ -21,7 +21,7 @@
                             Nom de l'acteur* : 
                         </td>
                         <td>
-                            <input type="text" name="titre" required />
+                            <input type="text" name="nom" required />
                         </td>
                     </tr>
                     <tr>

@@ -12,7 +12,7 @@
         <title>IFT287 - Ajouter description film</title>
     </head>
     <body>
-        <h1>Ajouter description film</h1>
+        <h1>Ajouter la description au film</h1>
         <br/>
         <form method="post" action="ajouterDescFilm">
         <table>

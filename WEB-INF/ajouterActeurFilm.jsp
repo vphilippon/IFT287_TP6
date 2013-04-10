@@ -12,7 +12,7 @@
         <title>IFT287 - Ajouter acteur film</title>
     </head>
     <body>
-        <h1>Ajouter acteur film</h1>
+        <h1>Ajouter acteur au film</h1>
         <br/>
         <form method="post" action="ajouterActeurFilm">
         <table>
