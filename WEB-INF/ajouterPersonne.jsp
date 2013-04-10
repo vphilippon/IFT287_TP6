@@ -15,38 +15,44 @@
         <h1>Ajouter personne</h1>
         <br/>
         <table>
-            <tr>
-                <td>
-                    Nom :
-                </td>
-                <td>
-                    <input type="text" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Date naissance :
-                </td>
-                <td>
-                    <input type="text" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Lieu naissance : 
-                </td>
-                <td>
-                    <input type="text" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Sexe :
-                </td>
-                <td>
-                    <input type="text" />
-                </td>
-            </tr>
+            <form method="post" action="ajouterPersonne">
+                <tr>
+                    <td>
+                        Nom : 
+                    </td>
+                    <td>
+
+                        <input type="text" name="nom" required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Date naissance :
+                    </td>
+                    <td>
+                        <input type="text" name="dateNaissance" required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Lieu naissance : 
+                    </td>
+                    <td>
+                        <input type="text" name="lieuNaissance"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Sexe :
+                    </td>
+                    <td>
+                        <input type="text" name="sexe" required/>
+                    </td>
+                </tr>
+                <tr>
+                    <input type="sumbit" value="Ajouter la personne"/>
+                </tr>
+            </form>
         </table>
         
     </body>
