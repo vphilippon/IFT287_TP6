@@ -51,7 +51,8 @@ public class AjouterFilm extends HttpServlet{
                               GestionTp6 tp6Update = (GestionTp6) request
                                               .getSession().getAttribute("tp6Update");
                               synchronized (tp6Update) {
-                                      tp6Update.gestionFilm;
+                                      tp6Update.gestionFilm.ajoutFilm(titre, date, realisateur);
+                                      tp6Update.gestionFilm.ajoutDescFilm(titre, date, description, dureeFilm);
                               }
                                       RequestDispatcher dispatcher = request
                                                       .getRequestDispatcher("/WEB-INF/listePretMembre.jsp");
