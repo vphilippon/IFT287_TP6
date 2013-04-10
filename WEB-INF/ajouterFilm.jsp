@@ -33,22 +33,6 @@
             </tr>
             <tr>
                 <td>
-                    Description :
-                </td>
-                <td>
-                    <textarea name="description"></textarea>
-                </td>
-            </tr>            
-            <tr>
-                <td>
-                    durée :
-                </td>
-                <td>
-                    <input type="number" name="duree" />
-                </td>
-            </tr>
-            <tr>
-                <td>
                     R&eacute;alisateur* : 
                 </td>
                 <td>
