@@ -47,6 +47,10 @@
       <servlet-class>tp6Servlet.AjouterDescFilm</servlet-class>
     </servlet>
     <servlet>
+      <servlet-name>AjouterDescSerie</servlet-name>
+      <servlet-class>tp6Servlet.AjouterDescSerie</servlet-class>
+    </servlet>
+    <servlet>
       <servlet-name>AjouterEpisode</servlet-name>
       <servlet-class>tp6Servlet.AjouterEpisode</servlet-class>
     </servlet>
@@ -117,6 +121,10 @@
     <servlet-mapping>
       <servlet-name>AjouterDescFilm</servlet-name>
       <url-pattern>/AjouterDescFilm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+      <servlet-name>AjouterDescSerie</servlet-name>
+      <url-pattern>/AjouterDescSerie</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
       <servlet-name>AjouterPersonne</servlet-name>
