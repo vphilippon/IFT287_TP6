@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-class RoleEpisode {
+public class RoleEpisode {
 
     private Connexion cx;
     private PreparedStatement stmtRoleEpisodeExiste;

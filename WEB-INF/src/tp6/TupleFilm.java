@@ -2,7 +2,7 @@ package tp6;
 
 import java.sql.Date;
 
-class TupleFilm 
+public class TupleFilm 
 {
     
     private String titre;

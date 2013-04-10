@@ -1,7 +1,6 @@
 <%-- 
     Document   : ajouterFilm
     Created on : 2013-04-10, 13:10:57
-    Author     : larm1303
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

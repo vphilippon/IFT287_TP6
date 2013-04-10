@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-class Serie {
+public class Serie {
 
     private Connexion cx;
     private PreparedStatement stmtSerieExiste;

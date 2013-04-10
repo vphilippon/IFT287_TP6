@@ -114,7 +114,6 @@ public class GestionFilm {
                 throw new Tp6Exception("L'acteur " + nomActeur + " joue deja le role " + role + " dans le film " + titre + ".");
             }
             
-            //@TODO voir si cette verification devrait etre la ou pas!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             //verifie que le role n'existe pas deja pour un autre acteur
             if (roleFilm.existe(titre, anneeSortie, role)) {
                 throw new Tp6Exception("Un autre acteur joue deja le role " + role + " dans le film " + titre + ".");

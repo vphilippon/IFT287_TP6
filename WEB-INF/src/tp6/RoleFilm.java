@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-class RoleFilm {
+public class RoleFilm {
     
     private Connexion cx;
     private PreparedStatement stmtRoleFilmExiste;

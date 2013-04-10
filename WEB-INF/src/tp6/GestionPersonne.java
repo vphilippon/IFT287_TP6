@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.List;
 
-class GestionPersonne {
+public class GestionPersonne {
     
     private Personne personne;
     private Film film;
