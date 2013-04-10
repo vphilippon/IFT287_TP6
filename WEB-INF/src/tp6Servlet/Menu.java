@@ -1,13 +1,8 @@
 package tp6Servlet;
 
-import java.sql.*;
-import java.util.*;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-
-import tp6.GestionTp6;
-import tp6.Tp6Exception;
 
 /**
  * Classe pour login systeme de gestion de cinematheque

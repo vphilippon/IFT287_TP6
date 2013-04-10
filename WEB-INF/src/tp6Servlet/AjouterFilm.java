@@ -25,17 +25,8 @@ public class AjouterFilm extends HttpServlet {
             try {
                 String titre = request.getParameter("titre");
                 String dateSortie = request.getParameter("dateSortie");
-                String description = request.getParameter("description");
-                String duree = request.getParameter("duree");
                 String realisateur = request.getParameter("realisateur");
 
-                // conversion du parametre dureeFilm en entier
-                int dureeFilm = -1; // inialisation requise par compilateur Java
-                try {
-                    dureeFilm = Integer.parseInt(duree);
-                } catch (NumberFormatException e) {
-                    throw new Tp6Exception("Format de la duree " + duree + " incorrect.");
-                }
                 // conversion du parametre dateSortie en SQLDate
                 Date date; // inialisation requise par compilateur Java
                 try {
@@ -49,8 +40,6 @@ public class AjouterFilm extends HttpServlet {
                         "tp6Update");
                 synchronized (tp6Update) {
                     tp6Update.gestionFilm.ajoutFilm(titre, date, realisateur);
-                    tp6Update.gestionFilm.ajoutDescFilm(titre, date, description,
-                            dureeFilm);
                 }
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/menu.jsp");
                 dispatcher.forward(request, response);
