@@ -23,7 +23,7 @@ public class Test extends HttpServlet {
 	// Dans les formulaire, on utilise la methode POST
 	// donc, si le servlet est appele avec la methode GET
 	// on retourne un page d'erreur, afin de ne pas permettre
-	// e l'utilisateur d'appeler un servler directement
+	// a l'utilisateur d'appeler un servler directement
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doPost(request, response);

@@ -7,8 +7,7 @@
 %>
     <span style="background-color: rgb(255, 0, 0);">
 <%
-    ListIterator it = ((List) request.
-      getAttribute("listeMessageErreur")).listIterator();
+    ListIterator it = ((List) request.getAttribute("listeMessageErreur")).listIterator();
     while (it.hasNext())
       {
 %>
