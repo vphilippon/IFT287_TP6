@@ -12,7 +12,7 @@
 <body>
 	<center>
 		<h1>Menu</h1>
-		<form ACTION="menu" METHOD="POST">
+		<form ACTION="Menu" METHOD="POST">
 			<input id="demande" TYPE="hidden" NAME="demande" VALUE="menu" /> 
                         <input TYPE="SUBMIT" VALUE="Ajouter un film" onclick="document.getElementById('demande').value = 'ajouterFilm';" /><br/>
                         <input TYPE="SUBMIT" VALUE="Ajouter une description a un film" onclick="document.getElementById('demande').value = 'ajouterDescFilm';" /><br/>

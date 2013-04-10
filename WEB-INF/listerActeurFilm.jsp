@@ -15,7 +15,7 @@
         <h1>Lister les acteurs du film</h1>
         <br/>
         <table>
-            <form method="post" action="listerActeurSerie">
+            <form method="post" action="listerActeurFilm">
                 <tr>
                     <td>
                         Titre du film : 
@@ -34,7 +34,7 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="submit" value="Afficher la liste d'acteur" />
+                        <input type="submit" value="Afficher la liste des acteurs du film" />
                     </td>
                 </tr>
             </form>
