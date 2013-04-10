@@ -14,7 +14,7 @@
     <body>
         <h1>Lister les series de l'acteur</h1>
         <br/>
-        <form method="post" action="listerSerieActeur">
+        <form method="post" action="ListerSerieActeur">
             <table>
                     <tr>
                         <td>

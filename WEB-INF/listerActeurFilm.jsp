@@ -15,7 +15,7 @@
         <h1>Lister les acteurs du film</h1>
         <br/>
         <table>
-            <form method="post" action="listerActeurFilm">
+            <form method="post" action="ListerActeurFilm">
                 <tr>
                     <td>
                         Titre du film : 

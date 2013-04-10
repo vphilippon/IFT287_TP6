@@ -14,7 +14,7 @@
     <body>
         <h1>Supprimer personne</h1>
         <br/>
-        <form method="post" action="supprimerPersonne">
+        <form method="post" action="SupprimerPersonne">
             <table>
                 <tr>
                     <td>

@@ -14,7 +14,7 @@
     <body>
         <h1>Lister acteur serie</h1>
         <br/>
-        <form method="post" action="listerActeurSerie">
+        <form method="post" action="ListerActeurSerie">
             <table>
                 <tr>
                     <td>

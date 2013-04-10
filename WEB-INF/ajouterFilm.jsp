@@ -14,7 +14,7 @@
     <body>
         <h1>Ajouter film</h1>
         <br/>
-        <form method="post" action="ajouterFilm">
+        <form method="post" action="AjouterFilm">
         <table>
             <tr>
                 <td>

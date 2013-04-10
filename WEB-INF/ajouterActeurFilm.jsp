@@ -14,7 +14,7 @@
     <body>
         <h1>Ajouter acteur au film</h1>
         <br/>
-        <form method="post" action="ajouterActeurFilm">
+        <form method="post" action="AjouterActeurFilm">
         <table>
             <tr>
                 <td>

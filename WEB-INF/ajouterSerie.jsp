@@ -14,7 +14,7 @@
     <body>
         <h1>Ajouter Serie</h1>
         <br/>
-        <form method="post" action="ajouterSerie">
+        <form method="post" action="AjouterSerie">
             <table> 
                 <tr>
                     <td>

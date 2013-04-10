@@ -14,7 +14,7 @@
     <body>
         <h1>Ajouter personne</h1>
         <br/>
-        <form method="post" action="ajouterPersonne">
+        <form method="post" action="AjouterPersonne">
             <table>
                 <tr>
                     <td>
