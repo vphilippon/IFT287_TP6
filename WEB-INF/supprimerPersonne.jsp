@@ -1,7 +1,7 @@
 <%-- 
     Document   : supprimerPersonne
     Created on : 2013-04-10, 13:35:10
-    Author     : Guilh
+    Author     : guillaume
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,22 +14,23 @@
     <body>
         <h1>Supprimer personne</h1>
         <br/>
-        <table>
-            <form method="post" action="supprimerPersonne">
+        <form method="post" action="supprimerPersonne">
+            <table>
                 <tr>
                     <td>
-                        Nom : 
+                        Nom* : 
                     </td>
                     <td>
 
-                        <input type="text" name="nom" required/>
+                        <input type="text" name="nom" required />
                     </td>
                 </tr>
                 <tr>
-                    <input type="sumbit" value="Supprimer la personne"/>
+                    <td colspan="2">
+                        <input type="submit" value="Supprimer la personne" />
+                    </td>
                 </tr>
-            </form>
-        </table>
-        
+            </table>
+        </form>
     </body>
 </html>

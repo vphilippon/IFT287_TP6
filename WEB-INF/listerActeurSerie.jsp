@@ -14,29 +14,30 @@
     <body>
         <h1>Lister acteur serie</h1>
         <br/>
-        <table>
-            <form method="post" action="listerActeurSerie">
+        <form method="post" action="listerActeurSerie">
+            <table>
                 <tr>
                     <td>
-                        Titre : 
+                        Titre* : 
                     </td>
                     <td>
-                        <input type="text" name="titre" required/>
+                        <input type="text" name="titre" required />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        Année de sortie :
+                        Année de sortie* :
                     </td>
                     <td>
-                        <input type="text" name="anneeSortie" required/>
+                        <input type="text" name="anneeSortie" required />
                     </td>
                 </tr>
                 <tr>
-                    <input type="sumbit" value="Afficher la liste d'acteur"/>
+                    <td colspan="2">
+                        <input type="submit" value="Afficher la liste d'acteur" />
+                    </td>
                 </tr>
-            </form>
-        </table>
-        
+            </table>
+        </form>       
     </body>
 </html>

@@ -1,7 +1,7 @@
 <%-- 
     Document   : ajouterSerie
     Created on : 2013-04-10, 13:35:10
-    Author     : Guilh
+    Author     : guillaume
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,31 +14,31 @@
     <body>
         <h1>Ajouter Serie</h1>
         <br/>
-        <table>
-            <form method="post" action="ajouterSerie">
+        <form method="post" action="ajouterSerie">
+            <table> 
                 <tr>
                     <td>
-                        Titre : 
+                        Titre* : 
                     </td>
                     <td>
 
-                        <input type="text" name="titre" required/>
+                        <input type="text" name="titre" required />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        Année de sortie :
+                        Année de sortie* :
                     </td>
                     <td>
-                        <input type="text" name="anneeSortie" required/>
+                        <input type="text" name="anneeSortie" required />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        Réalisateur : 
+                        Réalisateur* : 
                     </td>
                     <td>
-                        <input type="text" name="realisateur" required/>
+                        <input type="text" name="realisateur" required />
                     </td>
                 </tr>
                 <tr>
@@ -46,22 +46,23 @@
                         Description :
                     </td>
                     <td>
-                        <input type="textarea" name="description"/>
+                        <input type="textarea" name="description" />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        Nombre de saison :
+                        Nombre de saison* :
                     </td>
                     <td>
-                        <input type="number" name="nbSaison" required/>
+                        <input type="number" name="nbSaison" required />
                     </td>
                 </tr>
                 <tr>
-                    <input type="sumbit" value="Ajouter la série"/>
+                    <td colspan="2">
+                        <input type="submit" value="Ajouter la série" />
+                    </td>
                 </tr>
-            </form>
-        </table>
-        
+            </table>
+        </form>
     </body>
 </html>

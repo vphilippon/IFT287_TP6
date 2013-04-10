@@ -14,23 +14,23 @@
     <body>
         <h1>Ajouter personne</h1>
         <br/>
-        <table>
-            <form method="post" action="ajouterPersonne">
+        <form method="post" action="ajouterPersonne">
+            <table>
                 <tr>
                     <td>
-                        Nom : 
+                        Nom* : 
                     </td>
                     <td>
 
-                        <input type="text" name="nom" required/>
+                        <input type="text" name="nom" required />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        Date naissance :
+                        Date naissance* :
                     </td>
                     <td>
-                        <input type="text" name="dateNaissance" required/>
+                        <input type="text" name="dateNaissance" required />
                     </td>
                 </tr>
                 <tr>
@@ -38,22 +38,23 @@
                         Lieu naissance : 
                     </td>
                     <td>
-                        <input type="text" name="lieuNaissance"/>
+                        <input type="text" name="lieuNaissance" />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        Sexe :
+                        Sexe* :
                     </td>
                     <td>
-                        <input type="text" name="sexe" required/>
+                        <input type="text" name="sexe" required />
                     </td>
                 </tr>
                 <tr>
-                    <input type="sumbit" value="Ajouter la personne"/>
+                    <td colspan="2">
+                        <input type="submit" value="Ajouter la personne" />
+                    </td>
                 </tr>
-            </form>
-        </table>
-        
+            </table>
+        </form>
     </body>
 </html>
