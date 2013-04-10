@@ -41,6 +41,14 @@
                 </td>
             </tr>   
             <tr>
+                <td>
+                    Role :
+                </td>
+                <td>
+                    <input type="text" name="role" />
+                </td>
+            </tr>   
+            <tr>
                 <td colspan="2">
                     <input type="submit" value="Ajouter l'acteur au film" />
                 </td>
