@@ -91,6 +91,10 @@
       <servlet-class>tp6Servlet.ListerSerieActeur</servlet-class>
     </servlet>
     <servlet>
+      <servlet-name>ListerRealisateur</servlet-name>
+      <servlet-class>tp6Servlet.ListerRealisateur</servlet-class>
+    </servlet>
+    <servlet>
       <servlet-name>SupprimerFilm</servlet-name>
       <servlet-class>tp6Servlet.SupprimerFilm</servlet-class>
     </servlet>
@@ -157,6 +161,10 @@
     <servlet-mapping>
       <servlet-name>ListerSerieActeur</servlet-name>
       <url-pattern>/ListerSerieActeur</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+      <servlet-name>ListerRealisateur</servlet-name>
+      <url-pattern>/ListerRealisateur</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
       <servlet-name>SupprimerFilm</servlet-name>

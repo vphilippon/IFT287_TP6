@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tp6Servlet;
 
 import java.util.List;
@@ -38,12 +34,12 @@ public class ListerActeurSerie extends HttpServlet {
                             + " incorrect. AAAA-MM-JJ attendue.");
                 }
                 // exécuter la transaction
-                GestionTp6 tp6Update = (GestionTp6) request.getSession().getAttribute(
-                        "tp6Update");
-                synchronized (tp6Update) {
-                    request.setAttribute("listeActeur", tp6Update.gestionSerie.afficherActeursSerie(titre, date));
+                GestionTp6 tp6Interrogation = (GestionTp6) request.getSession().getAttribute(
+                        "tp6Interrogation");
+                synchronized (tp6Interrogation) {
+                    request.setAttribute("listeAfficher", tp6Interrogation.gestionSerie.afficherActeursSerie(titre, date));
                 }
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/listerActeurSerie.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/menu.jsp");
                 dispatcher.forward(request, response);
             } catch (Tp6Exception e) {
                 List<String> listeMessageErreur = new LinkedList<String>();

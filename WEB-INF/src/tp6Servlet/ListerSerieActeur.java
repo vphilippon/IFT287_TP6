@@ -1,24 +1,17 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tp6Servlet;
 
 import java.util.List;
 import java.util.LinkedList;
-import java.sql.*;
 import java.io.*;
-import java.text.ParseException;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import tp6.FormatDate;
 import tp6.GestionTp6;
 import tp6.Tp6Exception;
 
 @SuppressWarnings("serial")
 public class ListerSerieActeur extends HttpServlet {
-    
+
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Integer etat = (Integer) request.getSession().getAttribute("etat");
@@ -28,14 +21,15 @@ public class ListerSerieActeur extends HttpServlet {
         } else {
             try {
                 String nom = request.getParameter("nom");
-                
-                // exécuter la transaction
-                GestionTp6 tp6Update = (GestionTp6) request.getSession().getAttribute(
-                        "tp6Update");
-                synchronized (tp6Update) {
-                    request.setAttribute("listeSerie", tp6Update.gestionPersonne.afficherSerieAvecActeur(nom));
+
+                // executer la transaction
+                GestionTp6 tp6Interrogation = (GestionTp6) request.getSession().getAttribute(
+                        "tp6Interrogation");
+                synchronized (tp6Interrogation) {
+                    request.setAttribute("listeAfficher",
+                            tp6Interrogation.gestionPersonne.afficherSerieAvecActeur(nom));
                 }
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/listerSerieActeur.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/menu.jsp");
                 dispatcher.forward(request, response);
             } catch (Tp6Exception e) {
                 List<String> listeMessageErreur = new LinkedList<String>();

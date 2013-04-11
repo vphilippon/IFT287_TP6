@@ -1,7 +1,6 @@
 <%-- 
     Document   : listerSerieActeur
     Created on : 2013-04-10, 13:44:03
-    Author     : larm1303
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
