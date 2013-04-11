@@ -3,7 +3,7 @@
     Created on : 2013-04-10, 13:44:03
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.*,java.text.*" contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,5 +30,27 @@
                     </tr>
             </table>        
         </form>
+        
+        <%
+          // affichage de la liste des messages d'erreur
+          if (request.getAttribute("listeSerie") != null)
+            {
+        %>
+            Liste des series :
+            <span>
+        <%
+            ListIterator it = ((List) request.getAttribute("listeSerie")).listIterator();
+            while (it.hasNext())
+              {
+        %>
+              <BR>
+              <%= it.next() %>
+        <%
+              }
+        %>
+            </span>
+        <%
+            }
+        %>
     </body>
 </html>
