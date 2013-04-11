@@ -73,6 +73,10 @@ public class Menu extends HttpServlet {
                 System.out.println("Demande = listerFilmActeur");
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/listerFilmActeur.jsp");
                 dispatcher.forward(request, response);
+            } else if (demande.equals("listerRealisateur")) {
+                System.out.println("Demande = listerRealisateur");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/ListerRealisateur.jsp");
+                dispatcher.forward(request, response);
             }
 
         } catch (Exception e) {
