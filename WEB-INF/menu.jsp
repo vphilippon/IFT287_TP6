@@ -21,7 +21,7 @@
                         <input TYPE="SUBMIT" VALUE="Ajouter une serie" onclick="document.getElementById('demande').value = 'ajouterSerie';" /><br/>
                         <input TYPE="SUBMIT" VALUE="Ajouter une description a une serie" onclick="document.getElementById('demande').value = 'ajouterDescSerie';" /><br/>
                         <input TYPE="SUBMIT" VALUE="Ajouter un episode dans une serie" onclick="document.getElementById('demande').value = 'ajouterEpisode';" /><br/>
-                        <input TYPE="SUBMIT" VALUE="Ajouter un acteur dans un episode d'une serie" onclick="document.getElementById('demande').value = 'ajouterActeurSerie';" /> <br/>
+                        <input TYPE="SUBMIT" VALUE="Ajouter un acteur dans un episode" onclick="document.getElementById('demande').value = 'AjouterActeurEpisode';" /> <br/>
                         <input TYPE="SUBMIT" VALUE="Supprimer un film" onclick="document.getElementById('demande').value = 'supprimerFilm';" /><br/>
                         <input TYPE="SUBMIT" VALUE="Supprimer une personne" onclick="document.getElementById('demande').value = 'supprimerPersonne';" /><br/>
                         <input TYPE="SUBMIT" VALUE="Lister les acteurs d'un film" onclick="document.getElementById('demande').value = 'listerActeurFilm';" /> <br/>
