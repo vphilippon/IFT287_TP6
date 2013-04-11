@@ -1,5 +1,6 @@
 package tp6Servlet;
 
+
 import java.util.List;
 import java.util.LinkedList;
 import java.sql.*;
@@ -13,8 +14,8 @@ import tp6.GestionTp6;
 import tp6.Tp6Exception;
 
 @SuppressWarnings("serial")
-public class ListerActeurFilm extends HttpServlet {
-
+public class ListerFilmActeur extends HttpServlet {
+   
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Integer etat = (Integer) request.getSession().getAttribute("etat");
@@ -23,23 +24,15 @@ public class ListerActeurFilm extends HttpServlet {
             dispatcher.forward(request, response);
         } else {
             try {
-                String titre = request.getParameter("titre");
-                String anneeSortie = request.getParameter("anneeSortie");
+                String nom = request.getParameter("nomActeur");
                 
-                Date date;
-                try {
-                    date = new Date(FormatDate.convertirDate(anneeSortie).getTime());
-                } catch (ParseException e) {
-                    throw new Tp6Exception("Format de la date " + anneeSortie
-                            + " incorrect. AAAA-MM-JJ attendue.");
-                }
                 // exécuter la transaction
                 GestionTp6 tp6Update = (GestionTp6) request.getSession().getAttribute(
                         "tp6Update");
                 synchronized (tp6Update) {
-                    request.setAttribute("listeActeur", tp6Update.gestionFilm.afficherActeurDeFilm(titre, date));
+                    request.setAttribute("listeFilm", tp6Update.gestionPersonne.afficherFilmDeActeur(nom));
                 }
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/listerActeurFilm.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/listerFilmActeur.jsp");
                 dispatcher.forward(request, response);
             } catch (Tp6Exception e) {
                 List<String> listeMessageErreur = new LinkedList<String>();
@@ -60,4 +53,4 @@ public class ListerActeurFilm extends HttpServlet {
             throws ServletException, IOException {
         doPost(request, response);
     }
-} // class
+}

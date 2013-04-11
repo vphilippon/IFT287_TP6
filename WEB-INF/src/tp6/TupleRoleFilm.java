@@ -31,4 +31,9 @@ public class TupleRoleFilm {
     public Date getAnneeSortie() {
         return this.anneeSortie;
     }
+    
+    public String toString()
+    {
+        return filmTitre + " / " + anneeSortie + " / " + roleActeur;
+    }
 }

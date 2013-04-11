@@ -31,4 +31,9 @@ public class TuplePersonne {
     public int getSexe() {
         return sexe;
     }
+    
+    public String toString()
+    {    
+        return nom;
+    }
 }
