@@ -24,9 +24,11 @@
                         <input TYPE="SUBMIT" VALUE="Ajouter un acteur dans un episode" onclick="document.getElementById('demande').value = 'AjouterActeurEpisode';" /> <br/>
                         <input TYPE="SUBMIT" VALUE="Supprimer un film" onclick="document.getElementById('demande').value = 'supprimerFilm';" /><br/>
                         <input TYPE="SUBMIT" VALUE="Supprimer une personne" onclick="document.getElementById('demande').value = 'supprimerPersonne';" /><br/>
+                        <input TYPE="SUBMIT" VALUE="Lister les realisateurs" onclick="document.getElementById('demande').value = 'listerRealisateur';" /><br/>
                         <input TYPE="SUBMIT" VALUE="Lister les acteurs d'un film" onclick="document.getElementById('demande').value = 'listerActeurFilm';" /> <br/>
+                        <input TYPE="SUBMIT" VALUE="Lister les films d'un acteur" onclick="document.getElementById('demande').value = 'listerFilmActeur';" /><br/>
                         <input TYPE="SUBMIT" VALUE="Lister les acteurs d'une serie" onclick="document.getElementById('demande').value = 'listerActeurSerie';" /><br/>
-                        <input TYPE="SUBMIT" VALUE="Lister les series contenant un acteur" onclick="document.getElementById('demande').value = 'listerSerieActeur';" />
+                        <input TYPE="SUBMIT" VALUE="Lister les series d'un acteur" onclick="document.getElementById('demande').value = 'listerSerieActeur';" /><br/>
 		</form>
 	</center>
 	<br>

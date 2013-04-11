@@ -4,7 +4,7 @@
     Author     : guillaume
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.*,java.text.*" contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -33,27 +33,34 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        Numéro de saison* :
-                    </td>
-                    <td>
-                        <input type="text" name="noSaison" required />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Numéro d'épisode* :
-                    </td>
-                    <td>
-                        <input type="text" name="noEpisode" required />
-                    </td>
-                </tr>
-                <tr>
                     <td colspan="2">
                         <input type="submit" value="Afficher la liste d'acteur" />
                     </td>
                 </tr>
             </table>
-        </form>       
+        </form>  
+                
+        <%
+          // affichage de la liste des messages d'erreur
+          if (request.getAttribute("listeActeur") != null)
+            {
+        %>
+            Liste des acteurs :
+            <span>
+        <%
+            ListIterator it = ((List) request.getAttribute("listeActeur")).listIterator();
+            while (it.hasNext())
+              {
+        %>
+              <BR>
+              <%= it.next() %>
+        <%
+              }
+        %>
+            </span>
+        <%
+            }
+        %>
+
     </body>
 </html>

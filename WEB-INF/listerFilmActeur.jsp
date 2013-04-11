@@ -4,7 +4,7 @@
     Author     : guillaume
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.*,java.text.*" contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Lister film acteur/h1>
+        <h1>Lister film acteur </h1>
         <br/>
         <form method="post" action="ListerFilmActeur">
             <table>
@@ -31,5 +31,26 @@
                 </tr>
             </table>
         </form>
+         <%
+          // affichage de la liste des messages d'erreur
+          if (request.getAttribute("listeFilm") != null)
+            {
+        %>
+            Liste des films :
+            <span>
+        <%
+            ListIterator it = ((List) request.getAttribute("listeFilm")).listIterator();
+            while (it.hasNext())
+              {
+        %>
+              <BR>
+              <%= it.next() %>
+        <%
+              }
+        %>
+            </span>
+        <%
+            }
+        %>
     </body>
 </html>

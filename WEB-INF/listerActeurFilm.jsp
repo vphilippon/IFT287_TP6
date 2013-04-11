@@ -4,7 +4,7 @@
     Author     : larm1303
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.*,java.text.*" contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,7 +18,7 @@
             <form method="post" action="ListerActeurFilm">
                 <tr>
                     <td>
-                        Titre du film : 
+                        Titre du film* : 
                     </td>
                     <td>
                         <input type="text" name="titre" required />
@@ -26,7 +26,7 @@
                 </tr>
                 <tr>
                     <td>
-                        Année de sortie du film :
+                        Année de sortie du film* :
                     </td>
                     <td>
                         <input type="text" name="anneeSortie" required />
@@ -38,7 +38,29 @@
                     </td>
                 </tr>
             </form>
-        </table>
+        </table> 
         
+        <%
+          // affichage de la liste des messages d'erreur
+          if (request.getAttribute("listeActeur") != null)
+            {
+        %>
+            Liste des acteurs :
+            <span>
+        <%
+            ListIterator it = ((List) request.getAttribute("listeActeur")).listIterator();
+            while (it.hasNext())
+              {
+        %>
+              <BR>
+              <%= it.next() %>
+        <%
+              }
+        %>
+            </span>
+        <%
+            }
+        %>
+
     </body>
 </html>
