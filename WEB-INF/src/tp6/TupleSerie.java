@@ -38,4 +38,9 @@ public class TupleSerie {
     public int getNbSaison() {
         return nbSaison;
     }
+    
+    public String toString()
+    {
+        return titre + " / " + anneeSortie;
+    }
 }
