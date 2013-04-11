@@ -28,7 +28,7 @@ public class AjouterPersonne extends HttpServlet {
                 String lieuNaissance = request.getParameter("lieuNaissance");
                 String sexe = request.getParameter("sexe");
                 // conversion du parametre dureeFilm en entier
-                int s = -1; // inialisation requise par compilateur Java
+                int s;// = -1; // inialisation requise par compilateur Java
                 try {
                     s = Integer.parseInt(sexe);
                 } catch (NumberFormatException e) {
@@ -36,7 +36,7 @@ public class AjouterPersonne extends HttpServlet {
                             + " incorrect. (0 = gars, 1 = fille)");
                 }
                 // conversion du parametre dateSortie en SQLDate
-                Date date; // inialisation requise par compilateur Java
+                Date date;
                 try {
                     date = new Date(FormatDate.convertirDate(dateNaissance).getTime());
                 } catch (ParseException e) {

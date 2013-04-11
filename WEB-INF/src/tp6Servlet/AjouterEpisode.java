@@ -31,32 +31,32 @@ public class AjouterEpisode extends HttpServlet {
                 String description = request.getParameter("description");
                 String dateEpisode = request.getParameter("dateEpisode");
                 // conversion du parametre dateSortie en SQLDate
-                Date dateS; // inialisation requise par compilateur Java
+                Date dateS;
                 try {
                     dateS = new Date(FormatDate.convertirDate(dateSerie).getTime());
                 } catch (ParseException e) {
                     throw new Tp6Exception("Format de la date " + dateSerie
                             + " incorrect. AAAA-MM-JJ attendue.");
                 }
-                Date dateE; // inialisation requise par compilateur Java
+                Date dateE;
                 try {
                     dateE = new Date(FormatDate.convertirDate(dateEpisode).getTime());
                 } catch (ParseException e) {
                     throw new Tp6Exception("Format de la date " + dateEpisode
                             + " incorrect. AAAA-MM-JJ attendue.");
                 }
-                int nSaison=0;//cause une erreur si non initialisé.
+                int nSaison;//=0;//cause une erreur si non initialisé.
                 try {
                     nSaison = Integer.parseInt(noSaison);
                 } catch (NumberFormatException e) {
                     throw new Tp6Exception("Format de saison " + noSaison
                             + " incorrect. Entier attendu");
                 }
-                int nEpisode=0;//cause une erreur si non initialisé.
+                int nEpisode;//=0;//cause une erreur si non initialisé.
                 try {
                     nEpisode = Integer.parseInt(noEpisode);
                 } catch (NumberFormatException e) {
-                    throw new Tp6Exception("Format d'épisode " + noEpisode
+                    throw new Tp6Exception("Format de no d'épisode " + noEpisode
                             + " incorrect. Entier attendu");
                 }
                 // exécuter la transaction
@@ -84,8 +84,6 @@ public class AjouterEpisode extends HttpServlet {
     // Appel doPost
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // response.sendError(response.SC_INTERNAL_SERVER_ERROR, "Accès
-        // invalide");
         doPost(request, response);
     }
 } // class
