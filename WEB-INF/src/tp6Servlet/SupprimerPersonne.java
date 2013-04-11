@@ -13,7 +13,7 @@ import tp6.GestionTp6;
 import tp6.Tp6Exception;
 
 @SuppressWarnings("serial")
-public class AjouterSerie extends HttpServlet {
+public class SupprimerPersonne extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -23,36 +23,12 @@ public class AjouterSerie extends HttpServlet {
             dispatcher.forward(request, response);
         } else {
             try {
-                String titre = request.getParameter("titre");
-                String anneeSortie = request.getParameter("anneeSortie");
-                String realisateur = request.getParameter("realisateur");
-                String description = request.getParameter("description");
-                String nbSaison = request.getParameter("nbSaison");
-                // conversion du parametre dureeFilm en entier
-                int saison=0; //cause une erreur si non initialisé.
-                try {
-                    if (nbSaison.equals("")) {
-                        nbSaison = "1";
-                    }
-                    saison = Integer.parseInt(nbSaison);
-                } catch (NumberFormatException e) {
-                    throw new Tp6Exception("Format de saison " + nbSaison
-                            + " incorrect. Entier attendu");
-                }
-                // conversion du parametre dateSortie en SQLDate
-                Date date;
-                try {
-                    date = new Date(FormatDate.convertirDate(anneeSortie).getTime());
-                } catch (ParseException e) {
-                    throw new Tp6Exception("Format de la date " + anneeSortie
-                            + " incorrect. AAAA-MM-JJ attendue.");
-                }
+                String nom = request.getParameter("nom");
                 // exécuter la transaction
                 GestionTp6 tp6Update = (GestionTp6) request.getSession().getAttribute(
                         "tp6Update");
                 synchronized (tp6Update) {
-                    tp6Update.gestionSerie.ajoutSerie(titre, date, realisateur,
-                            description, saison);
+                    tp6Update.gestionPersonne.supprimerPersonne(nom);
                 }
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/menu.jsp");
                 dispatcher.forward(request, response);

@@ -45,9 +45,9 @@ public class Menu extends HttpServlet {
                 System.out.println("Demande = ajouterEpisode");
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/ajouterEpisode.jsp");
                 dispatcher.forward(request, response);
-            } else if (demande.equals("ajouterActeurSerie")) {
-                System.out.println("Demande = ajouterActeurSerie");
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/ajouterActeurSerie.jsp");
+            } else if (demande.equals("AjouterActeurEpisode")) {
+                System.out.println("Demande = AjouterActeurEpisode");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/ajouterActeurEpisode.jsp");
                 dispatcher.forward(request, response);
             } else if (demande.equals("supprimerFilm")) {
                 System.out.println("Demande = supprimerFilm");

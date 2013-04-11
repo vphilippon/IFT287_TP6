@@ -13,7 +13,7 @@ import tp6.GestionTp6;
 import tp6.Tp6Exception;
 
 @SuppressWarnings("serial")
-public class AjouterSerie extends HttpServlet {
+public class AjouterActeurEpisode extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -23,36 +23,39 @@ public class AjouterSerie extends HttpServlet {
             dispatcher.forward(request, response);
         } else {
             try {
-                String titre = request.getParameter("titre");
-                String anneeSortie = request.getParameter("anneeSortie");
-                String realisateur = request.getParameter("realisateur");
-                String description = request.getParameter("description");
-                String nbSaison = request.getParameter("nbSaison");
-                // conversion du parametre dureeFilm en entier
-                int saison=0; //cause une erreur si non initialisé.
+                String nomActeur = request.getParameter("nomActeur");
+                String roleActeur = request.getParameter("roleActeur");
+                String titreSerie = request.getParameter("titreSerie");
+                String numeroSaison = request.getParameter("numeroSaison");
+                String dateSortieSerie = request.getParameter("dateSortieSerie");
+                String numeroEpisode = request.getParameter("numeroEpisode");
+                // conversion du parametre dateSortie en SQLDate
+                Date dateS; // inialisation requise par compilateur Java
                 try {
-                    if (nbSaison.equals("")) {
-                        nbSaison = "1";
-                    }
-                    saison = Integer.parseInt(nbSaison);
+                    dateS = new Date(FormatDate.convertirDate(dateSortieSerie).getTime());
+                } catch (ParseException e) {
+                    throw new Tp6Exception("Format de la date " + dateSortieSerie
+                            + " incorrect. AAAA-MM-JJ attendue.");
+                }
+                int nSaison=0;//cause une erreur si non initialisé.
+                try {
+                    nSaison = Integer.parseInt(numeroSaison);
                 } catch (NumberFormatException e) {
-                    throw new Tp6Exception("Format de saison " + nbSaison
+                    throw new Tp6Exception("Format de saison " + numeroSaison
                             + " incorrect. Entier attendu");
                 }
-                // conversion du parametre dateSortie en SQLDate
-                Date date;
+                int nEpisode=0;//cause une erreur si non initialisé.
                 try {
-                    date = new Date(FormatDate.convertirDate(anneeSortie).getTime());
-                } catch (ParseException e) {
-                    throw new Tp6Exception("Format de la date " + anneeSortie
-                            + " incorrect. AAAA-MM-JJ attendue.");
+                    nEpisode = Integer.parseInt(numeroEpisode);
+                } catch (NumberFormatException e) {
+                    throw new Tp6Exception("Format d'épisode " + numeroEpisode
+                            + " incorrect. Entier attendu");
                 }
                 // exécuter la transaction
                 GestionTp6 tp6Update = (GestionTp6) request.getSession().getAttribute(
                         "tp6Update");
                 synchronized (tp6Update) {
-                    tp6Update.gestionSerie.ajoutSerie(titre, date, realisateur,
-                            description, saison);
+                    tp6Update.gestionSerie.ajoutRoleAEpisode(titreSerie, dateS, nSaison, nEpisode, nomActeur, roleActeur);
                 }
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/menu.jsp");
                 dispatcher.forward(request, response);
@@ -73,6 +76,8 @@ public class AjouterSerie extends HttpServlet {
     // Appel doPost
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        // response.sendError(response.SC_INTERNAL_SERVER_ERROR, "Accès
+        // invalide");
         doPost(request, response);
     }
 } // class
