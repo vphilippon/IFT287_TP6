@@ -45,7 +45,7 @@ public class AjouterEpisode extends HttpServlet {
                     throw new Tp6Exception("Format de la date " + dateEpisode
                             + " incorrect. AAAA-MM-JJ attendue.");
                 }
-                int nSaison;//=0;//cause une erreur si non initialisé.
+                int nSaison = 0;
                 try {
                     nSaison = Integer.parseInt(noSaison);
                 } catch (NumberFormatException e) {
@@ -63,7 +63,8 @@ public class AjouterEpisode extends HttpServlet {
                 GestionTp6 tp6Update = (GestionTp6) request.getSession().getAttribute(
                         "tp6Update");
                 synchronized (tp6Update) {
-                    tp6Update.gestionSerie.ajoutEpisode(titreEpisode, titreSerie, dateS, nSaison, nEpisode, description, dateE);
+                    tp6Update.gestionSerie.ajoutEpisode(titreEpisode, titreSerie, dateS,
+                            nSaison, nEpisode, description, dateE);
                 }
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/menu.jsp");
                 dispatcher.forward(request, response);

@@ -26,9 +26,12 @@ public class ListerFilmActeur extends HttpServlet {
                 GestionTp6 tp6Interrogation = (GestionTp6) request.getSession().getAttribute(
                         "tp6Interrogation");
                 synchronized (tp6Interrogation) {
-                    request.setAttribute("listeAfficher",
+                    request.setAttribute(
+                            "listeAfficher",
                             tp6Interrogation.gestionPersonne.afficherFilmDeActeur(nomActeur));
                 }
+                request.setAttribute("entete", "Voici la liste des films de l'acteur "
+                        + nomActeur + " :");
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/menu.jsp");
                 dispatcher.forward(request, response);
             } catch (Tp6Exception e) {

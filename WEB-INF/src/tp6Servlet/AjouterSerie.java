@@ -29,7 +29,7 @@ public class AjouterSerie extends HttpServlet {
                 String description = request.getParameter("description");
                 String nbSaison = request.getParameter("nbSaison");
                 // conversion du parametre dureeFilm en entier
-                int saison=0; //cause une erreur si non initialisé.
+                int saison = 0;
                 try {
                     if (nbSaison.equals("")) {
                         nbSaison = "1";

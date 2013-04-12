@@ -1,4 +1,5 @@
-<%@ page import="java.util.*,java.text.*" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.*,java.text.*" 
+  contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%
   // affichage de la liste des messages d'erreur
@@ -11,7 +12,7 @@
     while (it.hasNext())
       {
 %>
-      <BR>
+      <br />
       <%= it.next() %>
 <%
       }

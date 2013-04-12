@@ -25,7 +25,7 @@ public class SupprimerFilm extends HttpServlet {
             try {
                 String titre = request.getParameter("titre");
                 String dateSortie = request.getParameter("dateSortie");
-                
+
                 // conversion du parametre dateSortie en SQLDate
                 Date date;
                 try {
@@ -34,7 +34,7 @@ public class SupprimerFilm extends HttpServlet {
                     throw new Tp6Exception("Format de la date " + dateSortie
                             + " incorrect. AAAA-MM-JJ attendue.");
                 }
-                // exécuter la transaction
+                // executer la transaction
                 GestionTp6 tp6Update = (GestionTp6) request.getSession().getAttribute(
                         "tp6Update");
                 synchronized (tp6Update) {

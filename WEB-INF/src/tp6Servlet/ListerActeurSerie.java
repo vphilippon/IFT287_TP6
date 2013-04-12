@@ -14,7 +14,7 @@ import tp6.Tp6Exception;
 
 @SuppressWarnings("serial")
 public class ListerActeurSerie extends HttpServlet {
-  
+
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Integer etat = (Integer) request.getSession().getAttribute("etat");
@@ -25,7 +25,7 @@ public class ListerActeurSerie extends HttpServlet {
             try {
                 String titre = request.getParameter("titre");
                 String anneeSortie = request.getParameter("anneeSortie");
-                
+
                 Date date;
                 try {
                     date = new Date(FormatDate.convertirDate(anneeSortie).getTime());
@@ -33,12 +33,16 @@ public class ListerActeurSerie extends HttpServlet {
                     throw new Tp6Exception("Format de la date " + anneeSortie
                             + " incorrect. AAAA-MM-JJ attendue.");
                 }
-                // exécuter la transaction
+                // executer la transaction
                 GestionTp6 tp6Interrogation = (GestionTp6) request.getSession().getAttribute(
                         "tp6Interrogation");
                 synchronized (tp6Interrogation) {
-                    request.setAttribute("listeAfficher", tp6Interrogation.gestionSerie.afficherActeursSerie(titre, date));
+                    request.setAttribute("listeAfficher",
+                            tp6Interrogation.gestionSerie.afficherActeursSerie(titre,
+                                    date));
                 }
+                request.setAttribute("entete", "Voici la liste des acteurs de la série "
+                        + titre + " paru le " + date + " :");
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/menu.jsp");
                 dispatcher.forward(request, response);
             } catch (Tp6Exception e) {

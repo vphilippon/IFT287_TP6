@@ -41,6 +41,8 @@ public class ListerActeurFilm extends HttpServlet {
                             "listeAfficher",
                             tp6Interrogation.gestionFilm.afficherActeurDeFilm(titre, date));
                 }
+                request.setAttribute("entete", "Voici la liste des acteurs du film "
+                        + titre + " paru le " + date + " :");
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/menu.jsp");
                 dispatcher.forward(request, response);
             } catch (Tp6Exception e) {

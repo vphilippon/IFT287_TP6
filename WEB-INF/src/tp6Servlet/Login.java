@@ -9,6 +9,17 @@ import javax.servlet.http.*;
 import tp6.GestionTp6;
 import tp6.Tp6Exception;
 
+/*
+ * Projet : Tp6
+ *
+ * Membres :
+ * - Guillaume Harvey 12 059 595
+ * - Kevin Labrie 12 113 777
+ * - Vincent Philippon 12 098 838
+ * - Mathieu Larocque 10 129 032
+ * 
+ */
+
 /**
  * Classe pour login systeme de gestion de cinematheque
  * Inspire de l'exemple de Marc Frappier
@@ -21,11 +32,7 @@ public class Login extends HttpServlet {
             throws ServletException, IOException {
         try {
             HttpSession session = request.getSession();
-            // fermer la session si elle a deje ete ouverte lors d'un appel
-            // precedent
-            // survient lorsque l'usager recharge la page login.jsp
             if (session.getAttribute("etat") != null) {
-                // pour deboggage seulement : afficher no session et information
                 System.out.println("GestionTp6: session deja cree; id=" + session.getId());
                 session.invalidate();
                 session = request.getSession();
@@ -62,8 +69,6 @@ public class Login extends HttpServlet {
             request.setAttribute("listeMessageErreur", listeMessageErreur);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
             dispatcher.forward(request, response);
-            // pour deboggage seulement : afficher tout le contenu de
-            // l'exception
             e.printStackTrace();
         } catch (Tp6Exception e) {
             e.printStackTrace();

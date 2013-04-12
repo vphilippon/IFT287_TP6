@@ -6,8 +6,8 @@ import java.sql.*;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import tp6.FormatDate;
 
+import tp6.FormatDate;
 import tp6.GestionTp6;
 import tp6.Tp6Exception;
 
@@ -65,10 +65,6 @@ public class AjouterDescFilm extends HttpServlet {
         }
     }
 
-    // Dans les formulaire, on utilise la méthode POST
-    // donc, si le servlet est appelé avec la méthode GET
-    // on retourne un page d'erreur, afin de ne pas permettre
-    // à l'utilisateur d'appeler un servler directement
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         doPost(request, response);

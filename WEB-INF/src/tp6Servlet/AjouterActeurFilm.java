@@ -28,14 +28,14 @@ public class AjouterActeurFilm extends HttpServlet {
                 String nom = request.getParameter("nom");
                 String role = request.getParameter("role");
                 // conversion du parametre dateSortie en SQLDate
-                Date date; // inialisation requise par compilateur Java
+                Date date;
                 try {
                     date = new Date(FormatDate.convertirDate(dateSortie).getTime());
                 } catch (ParseException e) {
                     throw new Tp6Exception("Format de la date " + dateSortie
                             + " incorrect. AAAA-MM-JJ attendue.");
                 }
-                // exécuter la transaction
+                // executer la transaction
                 GestionTp6 tp6Update = (GestionTp6) request.getSession().getAttribute(
                         "tp6Update");
                 synchronized (tp6Update) {
@@ -60,8 +60,6 @@ public class AjouterActeurFilm extends HttpServlet {
     // Appel doPost
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // response.sendError(response.SC_INTERNAL_SERVER_ERROR, "Accès
-        // invalide");
         doPost(request, response);
     }
 } // class

@@ -38,9 +38,8 @@ public class TupleFilm {
     public String getTitre() {
         return titre;
     }
-    
-    public String toString()
-    {
-        return titre + " " + dateSortie;
+
+    public String toString() {
+        return titre + " / " + dateSortie;
     }
 }

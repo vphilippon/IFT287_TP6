@@ -24,6 +24,7 @@ public class ListerRealisateur extends HttpServlet {
                     request.setAttribute("listeAfficher",
                             tp6Interrogation.gestionPersonne.afficherRealisateur());
                 }
+                request.setAttribute("entete", "Voici la liste des réalisateur :");
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/menu.jsp");
                 dispatcher.forward(request, response);
             } catch (Exception e) {

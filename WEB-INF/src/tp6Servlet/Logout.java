@@ -4,7 +4,8 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-/** Classe pour logout systeme de gestion de cinematheque
+/** 
+ * Classe pour logout systeme de gestion de cinematheque
  * Inspire du travail de Marc Frappier
  */
 
@@ -13,7 +14,7 @@ public class Logout extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // invalider la session pour liberer les ressources associees e la session
+        // invalider la session pour liberer les ressources associees a la session
         request.getSession().invalidate();
         RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
         dispatcher.forward(request, response);

@@ -29,6 +29,8 @@ public class ListerSerieActeur extends HttpServlet {
                     request.setAttribute("listeAfficher",
                             tp6Interrogation.gestionPersonne.afficherSerieAvecActeur(nom));
                 }
+                request.setAttribute("entete", "Voici la liste des séries de l'acteur "
+                        + nom + " :");
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/menu.jsp");
                 dispatcher.forward(request, response);
             } catch (Tp6Exception e) {

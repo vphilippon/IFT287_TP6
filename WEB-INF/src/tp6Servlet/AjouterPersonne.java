@@ -28,7 +28,7 @@ public class AjouterPersonne extends HttpServlet {
                 String lieuNaissance = request.getParameter("lieuNaissance");
                 String sexe = request.getParameter("sexe");
                 // conversion du parametre dureeFilm en entier
-                int s = -1; // inialisation requise par compilateur Java
+                int s = -1;
                 try {
                     s = Integer.parseInt(sexe);
                 } catch (NumberFormatException e) {

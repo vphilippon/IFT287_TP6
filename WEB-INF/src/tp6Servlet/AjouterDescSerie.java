@@ -6,8 +6,8 @@ import java.sql.*;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import tp6.FormatDate;
 
+import tp6.FormatDate;
 import tp6.GestionTp6;
 import tp6.Tp6Exception;
 
@@ -43,7 +43,7 @@ public class AjouterDescSerie extends HttpServlet {
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/menu.jsp");
                 dispatcher.forward(request, response);
             } catch (Tp6Exception e) {
-                List listeMessageErreur = new LinkedList();
+                List<String> listeMessageErreur = new LinkedList<String>();
                 listeMessageErreur.add(e.toString());
                 request.setAttribute("listeMessageErreur", listeMessageErreur);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/menu.jsp");

@@ -2,13 +2,10 @@ package tp6Servlet;
 
 import java.util.List;
 import java.util.LinkedList;
-import java.sql.*;
 import java.io.*;
-import java.text.ParseException;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import tp6.FormatDate;
 import tp6.GestionTp6;
 import tp6.Tp6Exception;
 
@@ -24,7 +21,7 @@ public class SupprimerPersonne extends HttpServlet {
         } else {
             try {
                 String nom = request.getParameter("nom");
-                // exécuter la transaction
+                // executer la transaction
                 GestionTp6 tp6Update = (GestionTp6) request.getSession().getAttribute(
                         "tp6Update");
                 synchronized (tp6Update) {

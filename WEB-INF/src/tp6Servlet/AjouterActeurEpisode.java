@@ -30,32 +30,33 @@ public class AjouterActeurEpisode extends HttpServlet {
                 String dateSortieSerie = request.getParameter("dateSortieSerie");
                 String numeroEpisode = request.getParameter("numeroEpisode");
                 // conversion du parametre dateSortie en SQLDate
-                Date dateS; // inialisation requise par compilateur Java
+                Date dateS;
                 try {
                     dateS = new Date(FormatDate.convertirDate(dateSortieSerie).getTime());
                 } catch (ParseException e) {
                     throw new Tp6Exception("Format de la date " + dateSortieSerie
                             + " incorrect. AAAA-MM-JJ attendue.");
                 }
-                int nSaison=0;//cause une erreur si non initialisé.
+                int nSaison = 0;
                 try {
                     nSaison = Integer.parseInt(numeroSaison);
                 } catch (NumberFormatException e) {
                     throw new Tp6Exception("Format de saison " + numeroSaison
                             + " incorrect. Entier attendu");
                 }
-                int nEpisode=0;//cause une erreur si non initialisé.
+                int nEpisode = 0;
                 try {
                     nEpisode = Integer.parseInt(numeroEpisode);
                 } catch (NumberFormatException e) {
                     throw new Tp6Exception("Format d'épisode " + numeroEpisode
                             + " incorrect. Entier attendu");
                 }
-                // exécuter la transaction
+                // executer la transaction
                 GestionTp6 tp6Update = (GestionTp6) request.getSession().getAttribute(
                         "tp6Update");
                 synchronized (tp6Update) {
-                    tp6Update.gestionSerie.ajoutRoleAEpisode(titreSerie, dateS, nSaison, nEpisode, nomActeur, roleActeur);
+                    tp6Update.gestionSerie.ajoutRoleAEpisode(titreSerie, dateS, nSaison,
+                            nEpisode, nomActeur, roleActeur);
                 }
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/menu.jsp");
                 dispatcher.forward(request, response);
@@ -76,8 +77,6 @@ public class AjouterActeurEpisode extends HttpServlet {
     // Appel doPost
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // response.sendError(response.SC_INTERNAL_SERVER_ERROR, "Accès
-        // invalide");
         doPost(request, response);
     }
 } // class

@@ -17,7 +17,11 @@ public class Menu extends HttpServlet {
         try {
 
             String demande = request.getParameter("demande");
-            if (demande.equals("ajouterFilm")) {
+            if (demande == null) {  // Aucun specifier, retour au menu
+                System.out.println("Demande = Aucune (retour)");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/menu.jsp");
+                dispatcher.forward(request, response);
+            } else if (demande.equals("ajouterFilm")) {
                 System.out.println("Demande = ajouterFilm");
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/ajouterFilm.jsp");
                 dispatcher.forward(request, response);
@@ -75,7 +79,7 @@ public class Menu extends HttpServlet {
                 dispatcher.forward(request, response);
             } else if (demande.equals("listerRealisateur")) {
                 System.out.println("Demande = listerRealisateur");
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/ListerRealisateur.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/ListerRealisateur");
                 dispatcher.forward(request, response);
             }
 
