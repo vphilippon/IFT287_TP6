@@ -29,7 +29,7 @@ public class Personne {
         stmDeletePersonne = cx.getConnection().prepareStatement(
                 "DELETE FROM Personne WHERE nom = ?");
         stmtGetRealisateur = cx.getConnection().prepareStatement(
-                "SELECT * FROM personne WHERE nom IN (SELECT DISTINCT realisateur FROM Film)");
+                "SELECT * FROM personne WHERE nom IN (SELECT DISTINCT realisateur FROM Film) OR nom IN (SELECT DISTINCT realisateur FROM Serie)");
         stmtGetActeurDeSerie = cx.getConnection().prepareStatement(
                 "SELECT * FROM personne WHERE nom IN (SELECT DISTINCT nomActeur FROM RoleEpisode WHERE titreSerie = ? AND anneeSortieSerie = ?)");
     }
